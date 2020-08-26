@@ -1,0 +1,221 @@
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.guitar-small {
+    border: 1px solid #cccccc;
+}
+
+.guitar-small,
+.guitar-big {
+  border: 1px solid #555;
+  margin-bottom: .5rem;
+  padding: .2rem;
+}
+ 
+.guitar-big p {
+  margin-bottom: 0;
+}
+
+/* Typography ========================================= */
+ 
+h1, h2 {
+    font-family: oswald, helvetica, "arial narrow", sans-serif;
+}
+ 
+h1 {
+  font-weight: 700;
+  font-size: 6rem;
+  margin-top: 0;
+  text-align: center;
+  line-height: 1;
+  text-transform: uppercase;
+}
+ 
+h2 {
+  font-weight: 400;
+  text-transform: lowercase;
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: .75rem;
+  margin-top: 2rem;
+  line-height: 1;
+}
+ 
+h3 {
+  font-family: "Roboto Slab", courier, "courier new", monospace;
+  font-weight: 400;
+  margin: 0;
+  font-size: .75rem;
+}
+ 
+a {
+  font-family: "Roboto Slab", serif;
+}
+
+.contact-form h2 {
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+}
+footer p{
+  margin: 20px;
+}
+
+footer a {
+  border: 1px solid grey;
+  padding: 5px;
+}
+
+/* LINKS AND MENUS ========================== */
+ 
+a {
+    font-family: "roboto slab", serif;
+    text-decoration: none;
+  }
+   
+nav ul {
+  list-style-type: none;
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 0;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4px;
+    text-align: center;
+  }
+   
+nav a {
+  font-size: 1.4rem;
+  line-height: 2;
+  color: black;
+  background-color: #eee;
+  display: block;
+}
+   
+nav a:hover {
+  background-color: #bbb;
+  color: white;
+}
+
+  /* FORMS ===================================== */
+ 
+input, label, textarea {
+  display: block;
+  font-family: "roboto slab", serif;
+}
+ 
+input, textarea {
+  border: 1px solid #555;
+  margin-bottom: .5rem;
+  width: 100%;
+}
+ 
+textarea {
+  min-height: 7rem;
+}
+
+  /* Media Queries ===================================================== */
+
+  @media screen and (min-width: 800px) {
+      nav ul  {
+        grid-template-columns: repeat(3,1fr);
+      }
+      .wrapper {
+        max-width: 800px;
+        margin: auto;
+      }
+      .models-original,
+      .models-budget,
+      .models-artist {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1rem;
+    }
+    section h2, 
+    section .guitar-small:nth-of-type(1) {
+       /* OPTION ONE: grid-column: span 2; 
+          OPTION TWO: grid-column-start: 1;
+                      grid-column-end: 3; 
+          OPTION THREE: grid-column: 1 / -1; */
+      /* OPTION FOUR:  */
+      grid-column: span 2;
+}
+  }
+  /* End of 800px query========================== */
+
+@media screen and (min-width: 1200px) {
+ 
+    .wrapper {
+      max-width: 1200px;
+    }
+   
+    nav ul  {
+      grid-template-columns: repeat(6,1fr);
+    }
+   
+    .models-original,
+    .models-budget,
+    .models-artist {
+        grid-template-columns: repeat(3, 1fr);
+    }
+   
+    .models-artist h2,
+    .models-original h2,
+    .models-budget h2 {
+        grid-column: span 3;
+    }
+    section .guitar-small:nth-of-type(1) {
+     grid-column: span 1;
+    }
+
+    .featured-form {
+      max-width: 800px;
+      margin: auto;
+    }
+
+  } 
+  /* End of 1200px query =========================*/
+
+  @media screen and (min-width: 2400px) {
+ 
+    .wrapper {
+      max-width: 2400px;
+    }
+   
+    nav ul  {
+      grid-template-columns: repeat(6,1fr);
+    }
+   
+    .models-original,
+    .models-budget,
+    .models-artist {
+        grid-template-columns: repeat(3, 1fr);
+    }
+   
+    .models-artist h2,
+    .models-original h2,
+    .models-budget h2 {
+        grid-column: span 3;
+    }
+    section .guitar-small:nth-of-type(1) {
+     grid-column: span 1;
+    }
+
+    .featured-form {
+      max-width: 2400px;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-gap: 1rem;
+    }
+    textarea {
+      min-height: 13rem;
+    }
+
+  } 
+  /* End of 2400px query =========================*/
+  
